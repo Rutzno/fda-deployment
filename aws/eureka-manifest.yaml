@@ -16,7 +16,7 @@ spec:
       containers:
         - name: eureka
           image: macktb/eureka-service:0.0.1
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8761
           env:
