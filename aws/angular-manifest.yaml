@@ -18,7 +18,7 @@ spec:
       containers:
         - name: angularapp
           image: macktb/food-delivery-app-fe:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 
