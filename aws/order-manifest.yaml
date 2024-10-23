@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: orderapp
-          image: macktb/order-service:latest
+          image: macktb/foodcatalogue-service:2
           imagePullPolicy: Always
           ports:
             - containerPort: 9094
