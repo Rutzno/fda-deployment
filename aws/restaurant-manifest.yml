@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: restaurantapp
-          image: macktb/restaurantlisting-service:latest
+          image: macktb/restaurantlisting-service:16
           imagePullPolicy: Always
           ports:
             - containerPort: 9091
