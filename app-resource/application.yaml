@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: food-delivery-app
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myalias=docker.io/macktb
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
+    argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/myalias.force-update: "true"
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:Rutzno/fda-deployment.git
+    targetRevision: HEAD
+    path: ./aws
+    directory:
+      recursive:  true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+    synOptions:
+      - Validate=true
