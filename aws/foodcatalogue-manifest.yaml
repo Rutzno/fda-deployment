@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: foodcatalogueapp
-          image: macktb/foodcatalogue-service:2
+          image: macktb/foodcatalogue-service:6
           imagePullPolicy: Always
           ports:
             - containerPort: 9093
