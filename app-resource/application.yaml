@@ -11,16 +11,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:Rutzno/fda-deployment.git
+    repoURL: "git@github.com:Rutzno/fda-deployment.git"
     targetRevision: HEAD
     path: ./aws
     directory:
-      recursive:  true
+      recurse:  true
   destination:
-    server: https://kubernetes.default.svc
+    server: "https://kubernetes.default.svc"
     namespace: default
   syncPolicy:
     automated:
       selfHeal: true
-    synOptions:
+    syncOptions:
       - Validate=true
